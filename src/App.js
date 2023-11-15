@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
+  const appStyle = {
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr auto', // Header, content, footer
+    minHeight: '100vh' // Full viewport height
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={appStyle}>
+      <Header />
+      {/* Your main content will go here */}
+      <Footer />
     </div>
   );
 }
+
 
 export default App;
