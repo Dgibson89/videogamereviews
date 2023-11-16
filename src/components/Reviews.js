@@ -31,7 +31,6 @@ function Reviews() {
                 <p>User: {review.user}</p>
                 <p>Rating: {review.rating}</p>
                 <p>Comment: {review.comment}</p>
-                {/* Add more details as needed */}
               </li>
             ))}
           </ul>
