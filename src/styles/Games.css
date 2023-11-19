@@ -75,8 +75,8 @@
 
 .selected-game-container {
   text-align: center;
-  width: 100%; 
-  margin: 20px 0;
+  width: 90%; 
+  margin: 20px auto;
 }
 
 .selected-game-image {
@@ -87,6 +87,7 @@
 .game-screenshots {
   display: flex;
   align-items: center;
+  width: 90%;
   gap: 10px;
 }
 
