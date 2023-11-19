@@ -61,7 +61,7 @@ function App() {
       {selectedGame && (
         <div>
           <div className="selected-game-container">
-            <img src={selectedGame.background_image} alt={selectedGame.name} />
+            <img className="selected-game-image" src={selectedGame.background_image} alt={selectedGame.name} />
             <h2>{selectedGame.name}</h2>
 
             <div className="game-screenshots">
