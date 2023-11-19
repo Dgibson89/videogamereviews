@@ -80,7 +80,7 @@
 }
 
 .selected-game-image {
-  width: 600px;
+  width: 700px;
   height: auto;
 }
 
@@ -91,8 +91,9 @@
 }
 
 .game-screenshots img {
-  width: 33.33%; 
-  height: 400px;
+  width: 31.33%; 
+  height: 100%;
+  max-height: 300px;
   border-radius: 8px;
 }
 
