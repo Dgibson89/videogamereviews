@@ -79,6 +79,11 @@
   margin: 20px 0;
 }
 
+.selected-game-image {
+  width: 600px;
+  height: auto;
+}
+
 .game-screenshots {
   display: flex;
   align-items: center;
