@@ -1,5 +1,10 @@
+* {
+  text-align: center;
+}
+
 body {
   background-color: #0b0c10; /* Dark background */
   color: #66FCF1; /* Bright text color */
   font-family: 'Press Start 2P', cursive; /* Retro font */
+
 }
