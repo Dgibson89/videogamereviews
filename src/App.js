@@ -7,6 +7,7 @@ import Footer from "./components/Footer"; // Import Footer component
 
 function App() {
   const [selectedGame, setSelectedGame] = useState(null);
+  const [screenshotIndex, setScreenshotIndex] = useState(0);
 
   // Function to handle game selection and fetch game details
   const handleGameSelect = async (gameId) => {
@@ -35,6 +36,18 @@ function App() {
     }
   };
 
+  const handleLeftArrowClick = () => {
+    // Ensure the index doesn't go below zero
+    setScreenshotIndex((prevIndex) => Math.max(prevIndex - 3, 0));
+  };
+
+  const handleRightArrowClick = () => {
+    // Ensure the index doesn't exceed the length of the screenshots array
+    setScreenshotIndex((prevIndex) =>
+      Math.min(prevIndex + 3, selectedGame.screenshots.length - 3)
+    );
+  };
+
   const appStyle = {
     display: "grid",
     gridTemplateRows: "auto 1fr auto", // Header, content, footer
@@ -50,23 +63,26 @@ function App() {
           <div className="selected-game-container">
             <img src={selectedGame.background_image} alt={selectedGame.name} />
             <h2>{selectedGame.name}</h2>
+
             <div className="game-screenshots">
-              {selectedGame && selectedGame.screenshots && (
-                <div className="game-screenshots">
-                  {selectedGame.screenshots.map((screenshot) => (
-                    <img
-                      key={screenshot.id}
-                      src={screenshot.image}
-                      alt="Screenshot"
-                    />
-                  ))}
-                </div>
-              )}
+              <button onClick={handleLeftArrowClick}>&lt;</button>
+              {selectedGame.screenshots
+                .slice(screenshotIndex, screenshotIndex + 3)
+                .map((screenshot) => (
+                  <img
+                    key={screenshot.id}
+                    src={screenshot.image}
+                    alt="Screenshot"
+                  />
+                ))}
+              <button onClick={handleRightArrowClick}>&gt;</button>
             </div>
+
             <div className="game-details">
               <p>{selectedGame.description_raw}</p>
             </div>
           </div>
+
           <AddReview gameId={selectedGame.id} />
           <Reviews gameId={selectedGame.id} />
         </div>
