@@ -56,6 +56,21 @@
   background-color: #ff33ff;
 }
 
+.reset-button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #007bff; 
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  font-family: "Press Start 2P", cursive;
+}
+
+.reset-button:hover {
+  background-color: #0056b3; 
+}
+
 /* Styles when a game is selected */
 
 .selected-game-container {
