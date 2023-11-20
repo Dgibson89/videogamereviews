@@ -82,6 +82,7 @@
 .selected-game-image {
   width: 700px;
   height: auto;
+  /* Look into padding to fix image hugging the right of mobile screens */
 }
 
 .game-screenshots {
