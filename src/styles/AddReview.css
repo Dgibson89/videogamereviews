@@ -1,0 +1,46 @@
+
+.add-review-container {
+    background-color: #000; /* Dark background */
+    color: #0f0; /* Bright green text */
+    font-family: 'Press Start 2P', cursive; /* Pixel-style font */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px auto;
+    max-width: 600px; /* Limit the width of the form */
+    text-align: center;
+  }
+  
+  .add-review-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .add-review-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .add-review-input,
+  .add-review-textarea {
+    background-color: #222; /* Darker background for inputs */
+    color: #fff; /* White text */
+    border: 2px solid #0f0; /* Green border */
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .add-review-button {
+    background-color: #f00; /* Red button */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .add-review-button:hover {
+    background-color: #d00; /* Darker shade on hover */
+  }
+  
