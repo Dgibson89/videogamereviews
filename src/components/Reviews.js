@@ -29,7 +29,6 @@ function Reviews() {
               <li key={review._id}>
                 <h3>Game: {review.game}</h3>
                 <p>User: {review.user}</p>
-                <p>Rating: {review.rating}</p>
                 <p>Comment: {review.comment}</p>
               </li>
             ))}
