@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/AddReview.css";
 
-function AddReview() {
+function AddReview({ gameId }) {
   const [formData, setFormData] = useState({
-    game: "", // assuming game is identified by an ID or name
+    game: gameId,
     user: "",
-    rating: "",
     comment: "",
   });
+
+  // Update formData when gameId changes
+  useEffect(() => {
+    setFormData((formData) => ({ ...formData, game: gameId }));
+  }, [gameId]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,10 +36,8 @@ function AddReview() {
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       } else {
-        // Handle successful form submission here
         console.log("Review added successfully");
-        // Optionally, clear the form
-        setFormData({ game: "", user: "", rating: "", comment: "" });
+        setFormData({ game: gameId, user: "", comment: "" });
       }
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -45,16 +47,22 @@ function AddReview() {
   return (
     <div className="add-review-container">
       <h2 className="add-review-title">Write a Review</h2>
-      <form className="add-review-form">
+      <form className="add-review-form" onSubmit={handleSubmit}>
         <input
           type="text"
+          name="user"
+          value={formData.user}
+          onChange={handleChange}
           className="add-review-input"
-          placeholder="Review Title"
+          placeholder="Your Name"
         />
         <textarea
+          name="comment"
+          value={formData.comment}
+          onChange={handleChange}
           className="add-review-textarea"
           placeholder="Enter Review"
-        ></textarea>
+        />
         <button type="submit" className="add-review-button">
           Submit
         </button>
